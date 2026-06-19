@@ -22,10 +22,6 @@ export default async function Home() {
         className="relative flex flex-col items-center justify-center text-center"
         style={{ minHeight: '100vh' }}
       >
-        {/* Architectural frames */}
-        <div className="hero-frame hero-frame-outer" />
-        <div className="hero-frame hero-frame-inner" />
-
         {/* Content */}
         <div className="flex flex-col items-center" style={{ position: 'relative', zIndex: 1 }}>
           <div className="hero-wordmark-wrapper">
@@ -98,9 +94,9 @@ export default async function Home() {
             }}
           >
             <p>
-              A design practice rooted in the layered nature of space, where history, material,
-              and lived experience converge. Each project begins with deep contextual reading,
-              allowing architecture to emerge from what already exists rather than replace it.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
         </div>
