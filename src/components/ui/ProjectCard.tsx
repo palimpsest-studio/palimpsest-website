@@ -4,19 +4,17 @@ import type { Project } from '@/types'
 type Props = {
   project: Project
   size?: 'large' | 'small'
+  aspectRatio?: string
 }
 
-export default function ProjectCard({ project, size = 'small' }: Props) {
-  const meta = [project.location, project.type, project.year]
-    .filter(Boolean)
-    .join(' — ')
+export default function ProjectCard({ project, size = 'small', aspectRatio }: Props) {
+  const meta = [project.type, project.year].filter(Boolean).join(' · ')
+
+  const ratio = aspectRatio ?? (size === 'large' ? '2 / 3' : '4 / 3')
 
   return (
     <div className="project-card">
-      <div
-        className="project-card-image"
-        style={{ aspectRatio: size === 'large' ? '16 / 10' : '4 / 3' }}
-      >
+      <div className="project-card-image" style={{ aspectRatio: ratio }}>
         {project.cover_image ? (
           <Image
             src={project.cover_image}
@@ -49,7 +47,7 @@ export default function ProjectCard({ project, size = 'small' }: Props) {
         )}
       </div>
 
-      <div style={{ marginTop: 'var(--space-xs)' }}>
+      <div style={{ marginTop: 14 }}>
         <h3 className="project-card-name">{project.name}</h3>
         {meta && (
           <p
@@ -60,7 +58,7 @@ export default function ProjectCard({ project, size = 'small' }: Props) {
               letterSpacing: 'var(--tracking-wider)',
               textTransform: 'uppercase',
               color: 'var(--color-text-subtle)',
-              marginTop: 6,
+              marginTop: 5,
             }}
           >
             {meta}
